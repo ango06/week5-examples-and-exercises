@@ -1,5 +1,6 @@
 import './App.css';
 import Review from './components/Review';
+import Ingredient from './components/Ingredient';
 
 function App() {
   // Review information
@@ -69,7 +70,7 @@ function App() {
         </section>
 
         <section id="reviews">
-          {reviews.map(review => <Review review={review}/>)}
+          {reviews.map(review => <Review review_prop={review}/>)}
         </section>
 
         <section id="menu">
@@ -99,7 +100,9 @@ function App() {
           <li>Extra Beans</li>
           <li>more (ask about our seafood options)</li>
           <br>  
-            */}
+            */
+          ingredients.map(ingredient => <Ingredient ingredient={ingredient}/>)
+            };
           </ul>
         </section>
     </> 
