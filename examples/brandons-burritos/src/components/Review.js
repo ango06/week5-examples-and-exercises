@@ -1,5 +1,5 @@
 const Review = (props) => {
-    const review = props.review;
+    const review = props.review_prop;
     const star = "⭐";
     return (
         <div className="review">
