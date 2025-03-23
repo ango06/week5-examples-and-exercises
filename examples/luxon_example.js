@@ -1,5 +1,38 @@
 const { DateTime } = require("luxon");
 
+const today = DateTime.now();
+console.log("Today's date: " + today.toLocaleString(DateTime.DATE_MED));
+
+const myBDAY = DateTime.fromObject({
+        year: 2006, 
+        month: 2, 
+        day: 9,
+        hour: 12,
+        minute: 0
+});
+console.log(myBDAY.toLocaleString("My bday: " + DateTime.DATETIME_FULL));
+
+const neighborBDAY = DateTime.fromObject({
+        year: 2006,
+        month: 3,
+        day: 16
+});
+console.log("Is my bday less than my neighbor's?: " + myBDAY < neighborBDAY);
+
+const newTime = myBDAY.plus({
+        year: 1,
+        month: 2,
+        day: 3,
+        hour: 10
+})
+console.log("Add time to my bday: " + newTime.toLocaleString(DateTime.DATETIME_FULL));
+
+const timeChange = newTime.setZone("Asia/Manila");
+console.log("Change time zone of the added time to be in Manila: " + timeChange.toLocaleString(DateTime.DATETIME_FULL));
+
+const bdayTimeChange = myBDAY.setZone("Europe/Berlin");
+console.log("Change time zone of my bday time to be in Berlin: " + bdayTimeChange.toLocaleString(DateTime.DATETIME_FULL))
+
 /* Useful Functions (from API Documentation)
 
 DateTime obj = {
